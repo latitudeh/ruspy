@@ -1,0 +1,5 @@
+fn`print`Creando variable normalvar pero haciendo lo mismo que con las colecciones de darle 2 valores
+<N>`normalvar`: abcdefghi
+<N>`normalvar`: 123456789
+fn`print`Obteniendo la misma variable bajo sus diferentes valores
+gnvar`normalvar`

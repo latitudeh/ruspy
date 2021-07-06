@@ -1,10 +1,14 @@
 const collection = async e => {
-    e[2] = e[2].split(": ");
-    e[2][1] = e[2][1].split(", ");
+    if (e[3] == "gvar") {
+        e[2] = e[2].split(", ");
 
-    let type = "Array"
+        console.log("Collection", e[2]);
+    } else {
+        e[2] = e[2].split(": ");
+        e[2][1] = e[2][1].split(", ");
 
-    console.log(type, e[2][1]);
+        console.log("Collection", e[2][1]);
+    }
 }
 
 module.exports = collection;

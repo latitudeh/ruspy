@@ -1,0 +1,5 @@
+# este archivo no debería ejecutar nada
+# ya que tiene puro comentario
+-# y aun que le añada fn [] no se va a ejecutar verdad?
+# eso espero jaja
+fn`print`Si se termina el programa, no se va a leer esta línea

@@ -5,12 +5,16 @@ const fs = require("fs"),
     multiply = require("./src/Multiply"),
     divide = require("./src/Divide"),
     collection = require("./src/Collection"),
-    gvar = require("./src/GetVariable");
+    gcvar = require("./src/GetCollectionVar"),
+    nvar = require("./src/NormalVar"),
+    gnvar = require("./src/GetNormalVar");
 
 const file = fs.readFileSync(process.argv[2]).toString().split("\n");
 
 file.forEach(e => {
-    if (e.startsWith("fn")) {
+    if (e.startsWith("#")) {
+        return;
+    } else if (e.startsWith("fn")) {
         e = e.split("fn");
         var reArray = [];
         e.forEach(l => {
@@ -32,8 +36,19 @@ file.forEach(e => {
     } else if (e.startsWith("[]")) {
         e = e.split("`");
         collection(e);
-    } else if (e.startsWith("gvar")) {
+    } else if (e.startsWith("gcvar")) {
         e = e.split("`");
-        gvar(file, e);
+        gcvar(file, e);
+    } else if (e.startsWith("<N>")) {
+        e = e.split("`");
+        nvar(e);
+    } else if (e.startsWith("gnvar")) {
+        e = e.split("`");
+        gnvar(file, e);
+    } else if (e.startsWith("")) {
+        return;
+    } else {
+        console.log("Syntax error detected, line:", e);
+        process.exit();
     }
 });
