@@ -1,0 +1,9 @@
+fn`print`A dia de hoy, 06/07/2021 tenemos estas funciones
+fn`+` 2, 4
+fn`-` 6, 2
+fn`*` 3, 4
+fn`/` 4, 2
+[]`testcollection`: a, b, c, d, e, f, g, h, i
+<N>`testnormalvariables`: abcdefghi
+gcvar`testcollection`
+gnvar`testnormalvariables`
