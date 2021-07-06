@@ -7,7 +7,8 @@ const fs = require("fs"),
     collection = require("./src/Collection"),
     gcvar = require("./src/GetCollectionVar"),
     nvar = require("./src/NormalVar"),
-    gnvar = require("./src/GetNormalVar");
+    gnvar = require("./src/GetNormalVar"),
+    http = require("./src/HTTPServer");
 
 const file = fs.readFileSync(process.argv[2]).toString().split("\n");
 
@@ -45,6 +46,9 @@ file.forEach(e => {
     } else if (e.startsWith("gnvar")) {
         e = e.split("`");
         gnvar(file, e);
+    } else if (e.startsWith("http")) {
+        e = e.split("`");
+        http(e);
     } else if (e.startsWith("")) {
         return;
     } else {
