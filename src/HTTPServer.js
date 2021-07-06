@@ -6,9 +6,6 @@ const http = async e => {
     let serverip = e[1][0],
         port = Number(e[1][1]);
 
-    /** eval("server" + "='" + e[1][0] + "'");
-    eval("port" + "=" + e[1][1]); */ // If you want to use it, make sure u update all the refs to e[1][0] & e[1][1]
-
     const requestListener = async (req, res) => { };
 
     const server = httpserver.createServer(requestListener);
